@@ -1,0 +1,607 @@
+﻿<Page
+    x:Class="MovieTube.UI.Views.DeviceFamily_Desktop.MovieDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube.UI.Views.DeviceFamily_Desktop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:extension="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:models="using:MovieTube.Functions.Models"
+    xmlns:converters="using:MovieTube.UI.Converters"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:anim="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:ImageURLConverter x:Key="ImageURLConverter"/>
+            <converters:StringToDoubleConverter x:Key="StringToDoubleConverter"/>
+            <converters:StringToIntegerConverter x:Key="StringToIntegerConverter"/>
+            <converters:VideoURLConverter x:Key="VideoURLConverter"/>
+            <converters:LikedConverter x:Key="LikedConverter"/>
+            <converters:DislikedConverter x:Key="DislikedConverter"/>
+            <converters:FavouriteConverter x:Key="FavouriteConverter"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Icons/MovieDetailsViewIcons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/ContainersBrushes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+
+
+    <Grid Style="{StaticResource MainGridStyle}"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              x:Name="MainGrid">
+
+        <ScrollViewer HorizontalScrollMode="Disabled"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollMode="Auto"
+                    VerticalScrollBarVisibility="Auto">
+
+            <!--Movie's Info(likes, dislikes, favorite, name, rating, poster)
+                Movie's photos
+                Movie's Ratings
+                Movie's Cast
+                Movie's Comments-->
+            <StackPanel
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+
+                <!--Information about this movie and user interaction-->
+                <Grid x:Name="movieDetailsGrid"
+                      DataContext="{x:Bind MovieDetailsData, Mode=OneWay}">
+
+                    <!--The movie image-->
+                    <controls:ImageEx HorizontalAlignment="Stretch"
+                              VerticalAlignment="Top"
+                              Height="320"
+                              Stretch="Fill"
+                              Source="{Binding Banner, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=banners}"/>
+
+                    <!--The movie poster-->
+                    <controls:DropShadowPanel VerticalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              Margin="48 212 0 0"
+                              OffsetY="2"
+                              ShadowOpacity="0.8"
+                              BlurRadius="20">
+                        <controls:ImageEx VerticalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              Width="160"
+                              Height="220"
+                              Source="{Binding Poster, Converter={StaticResource ImageURLConverter}, ConverterParameter=posters}"/>
+                    </controls:DropShadowPanel>
+
+                    <!--Movie's name, rating-->
+                    <StackPanel Orientation="Vertical"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Margin="260 320 0 0">
+
+                        <!--Movie's name-->
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                           HorizontalAlignment="Left"
+                           Text="{Binding Name, Mode=OneWay}"/>
+
+                        <!--movie's rating-->
+                        <RatingControl Margin="0 8 0 0"
+                               VerticalAlignment="Center"
+                               IsReadOnly="True"
+                                Value="{Binding Rate, Mode=OneWay, Converter={StaticResource StringToDoubleConverter}}">
+                            <RatingControl.RenderTransform>
+                                <ScaleTransform ScaleX="0.8"
+                                        ScaleY="0.8"/>
+                            </RatingControl.RenderTransform>
+                        </RatingControl>
+                    </StackPanel>
+
+                    <!--Like, dislike and favourite this movie-->
+                    <StackPanel x:Name="likeDislikeFavStackPanel"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        DataContext="{x:Bind UsersFeedbackData, Mode=OneWay}"
+                        Margin="400 312 0 0">
+
+                        <!--Like-->
+                        <StackPanel>
+                            <Grid x:Name="likeGrid"
+                                  Style="{StaticResource DetailsGridStyle}" 
+                                  Padding="0"
+                                  BorderThickness="0"
+                                  CornerRadius="40"
+                                  Height="40"
+                                  Margin="8 0 8 0"
+                                  extension:Mouse.Cursor="Hand"
+                                  Width="40"
+                                  Tapped="likeGrid_Tapped">
+
+                                <Image x:Name="likeIcon"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="None"
+                                   Source="{x:Bind UserLiked, Mode=OneWay, Converter={StaticResource LikedConverter}}"/>
+                            </Grid>
+                            <TextBlock x:Name="likesCount"
+                                   Margin="0 8 0 0"
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding CountLikes, Mode=OneWay}"/>
+                        </StackPanel>
+
+                        <!--Dislike-->
+                        <StackPanel>
+                            <Grid x:Name="dislikeGrid"
+                                  Style="{StaticResource DetailsGridStyle}"
+                                  Padding="0"
+                                  BorderThickness="0"
+                                  CornerRadius="40"
+                                  Margin="8 0 8 0"
+                                  extension:Mouse.Cursor="Hand"
+                                  Height="40"
+                                  Width="40"
+                                  Tapped="dislikeGrid_Tapped">
+
+                                <Image x:Name="dislikeIcon"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Stretch="None"
+                                       Source="{x:Bind UserDisliked, Mode=OneWay, Converter={StaticResource DislikedConverter}}"/>
+                            </Grid>
+                            <TextBlock x:Name="dislikeCount"
+                                   Margin="0 8 0 0"
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding CountDislikes, Mode=OneWay}"/>
+                        </StackPanel>
+
+                        <!--Favourite-->
+                        <StackPanel>
+                            <Grid x:Name="favGrid"
+                                  Style="{StaticResource DetailsGridStyle}"
+                                  Padding="0"
+                                  BorderThickness="0"
+                                  CornerRadius="40"
+                                  Margin="8 0 8 0"
+                                  Height="40"
+                                  extension:Mouse.Cursor="Hand"
+                                  Width="40"
+                                  Tapped="favGrid_Tapped">
+
+                                <Image x:Name="favIcon"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Stretch="None"
+                                       Source="{x:Bind UserFavourite, Mode=OneWay, Converter={StaticResource FavouriteConverter}}"/>
+                            </Grid>
+
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <!--Button for playing movie-->
+                    <Button x:Name="moviePlayBtn"
+                            Style="{StaticResource ButtonRoundedStyle}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            extension:Mouse.Cursor="Hand"
+                            Height="80"
+                            Width="80"
+                            Margin="0 208 40 0"
+                            Click="MoviePlaybtn_Click">
+
+                        <Button.Content>
+                            <Image HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Stretch="None"
+                                   Width="60"
+                                   Height="60"
+                           Source="{StaticResource Video}"/>
+                        </Button.Content>
+                    </Button>
+
+                    <!--Description of movie-->
+                    <TextBlock VerticalAlignment="Bottom"
+                           HorizontalAlignment="Left"
+                           Margin="260 0 0 -32"
+                           Style="{StaticResource BodyTextBlockStyle}"
+                           Text="{Binding Description}"/>
+
+                    <!--This is like a button for playing the movie-->
+                    <Grid x:Name="movieTrailerBtn"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="0 0 0 100"
+                          Height="60"
+                          Width="60"
+                          Style="{StaticResource DetailsGridStyle}"
+                          BorderBrush="{StaticResource SystemAccentColor}"
+                          extension:Mouse.Cursor="Hand"
+                          CornerRadius="32"
+                          Tapped="movieTrailerBtn_Tapped">
+                        <SymbolIcon Width="32"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                  Height="32"
+                                    Foreground="{StaticResource SystemAccentColor}"
+                                  Symbol="Play"/>
+                    </Grid>
+
+                </Grid>
+
+                <!--Movie's images-->
+                <StackPanel Orientation="Vertical"
+                    Margin="0 80 0 0"
+                    HorizontalAlignment="Stretch">
+
+                    <!--Photos title and image-->
+                    <StackPanel Orientation="Horizontal"
+                                Margin="16 0 0 0">
+
+                        <!--Photos Images-->
+                        <Grid Style="{StaticResource DetailsGridStyle}"
+                              Padding="0"
+                              BorderThickness="0"
+                              CornerRadius="40"
+                              Margin="8 0 8 0"
+                              Height="40"
+                              Width="40">
+                            <Image HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="None"
+                                   Source="{StaticResource Photos}"/>
+                        </Grid>
+
+                        <!--Photos title-->
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="Photos"/>
+
+                    </StackPanel>
+
+                    <!--image list-->
+                    <ListView x:Name="movieImages"
+                          HorizontalAlignment="Stretch"
+                          Margin="32 16 0 0"
+                          SelectionMode="None"
+                          ScrollViewer.HorizontalScrollMode="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ItemsSource="{x:Bind MovieImages, Mode=OneWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="300" Height="200" CornerRadius="8">
+                                    <controls:ImageEx Stretch="Fill"
+                                              Source="{Binding Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=movies_photos}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Margin" Value="0"/>
+                                <Setter Property="Padding" Value="4 0 4 0"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+
+                </StackPanel>
+
+                <!--Users ratings for this movie-->
+                <StackPanel x:Name="ratingsStackPanel"
+                            DataContext="{x:Bind UsersFeedbackData, Mode=OneWay}"
+                            Orientation="Vertical"
+                            Margin="0 20 0 0"
+                            HorizontalAlignment="Stretch">
+
+                    <!--Ratings title and image-->
+                    <StackPanel Orientation="Horizontal"
+                                Margin="16 0 0 0">
+
+                        <!--Ratings Images-->
+                        <Grid Style="{StaticResource DetailsGridStyle}"
+                              Padding="0"
+                              BorderThickness="0"
+                              CornerRadius="40"
+                              Margin="8 0 8 0"
+                              Height="40"
+                              Width="40">
+                            <Image HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="None"
+                                   Source="{StaticResource Ratings}"/>
+                        </Grid>
+
+                        <!--Ratings title-->
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="Ratings">
+                        </TextBlock>
+
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="">(
+                            <Run Text="{Binding CountRatings, Mode=OneWay}"/>
+                            <Run Text=")"/>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <!--Ratings collection-->
+                    <Grid Margin="0 8 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Entertainment-->
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                   Text="Entertainment"
+                                   Margin="80 8 0 0"/>
+
+                        <RatingControl Margin="32 8 0 0"
+                               VerticalAlignment="Center"
+                                   Grid.Column="1"
+                               IsReadOnly="True"
+                                       Value="{Binding AvgRatingEntertament, Mode=OneWay, Converter={StaticResource StringToDoubleConverter}}">
+                            <RatingControl.RenderTransform>
+                                <ScaleTransform ScaleX="0.8"
+                                        ScaleY="0.8"/>
+                            </RatingControl.RenderTransform>
+                        </RatingControl>
+
+
+                        <!--Perform artists-->
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                               Grid.Row="1"
+                                   Text="Perform artists"
+                                   Margin="80 8 0 0"/>
+
+                        <RatingControl Margin="32 8 0 0"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                               VerticalAlignment="Center"
+                               IsReadOnly="True"
+                                       Value="{Binding RatingPerformActors, Mode=OneWay, Converter={StaticResource StringToDoubleConverter}}">
+                            <RatingControl.RenderTransform>
+                                <ScaleTransform ScaleX="0.8"
+                                        ScaleY="0.8"/>
+                            </RatingControl.RenderTransform>
+                        </RatingControl>
+
+                        <!-- Resolution-->
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                               Grid.Row="2"
+                                   Text="Resolution"
+                                   Margin="80 8 0 0"/>
+
+                        <RatingControl Margin="32 8 0 0"
+                               VerticalAlignment="Center"
+                                   Grid.Column="1"
+                                   Grid.Row="2"
+                               IsReadOnly="True"
+                                       Value="{Binding RatingResolution, Mode=OneWay, Converter={StaticResource StringToDoubleConverter}}">
+                            <RatingControl.RenderTransform>
+                                <ScaleTransform ScaleX="0.8"
+                                        ScaleY="0.8"/>
+                            </RatingControl.RenderTransform>
+                        </RatingControl>
+                    </Grid>
+
+                </StackPanel>
+
+                <!--Movie's actors-->
+                <StackPanel x:Name="castStackPanel"
+                            Orientation="Vertical"
+                            Margin="0 20 0 0"
+                            HorizontalAlignment="Stretch">
+
+                    <!--Actors title and image-->
+                    <StackPanel Orientation="Horizontal"
+                            Margin="16 0 0 0">
+
+                        <!--Actors Images-->
+                        <Grid Style="{StaticResource DetailsGridStyle}"
+                              Padding="0"
+                              BorderThickness="0"
+                              CornerRadius="40"
+                              Margin="8 0 8 0"
+                              Height="40"
+                              Width="40">
+                            <Image HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="None"
+                                   Source="{StaticResource Cast}"/>
+                        </Grid>
+
+                        <!--Actors title-->
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="Actors"/>
+                    </StackPanel>
+
+                    <!--Actors list-->
+                    <ListView x:Name="movieActors"
+                          HorizontalAlignment="Stretch"
+                          Margin="32 16 0 0"
+                          SelectionMode="None"
+                          ScrollViewer.HorizontalScrollMode="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ItemsSource="{x:Bind MovieActors, Mode=OneWay }">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Actor">
+                                <controls:ImageEx Height="200"
+                                              Width="300"
+                                              Stretch="Fill"
+                                              CornerRadius="8"
+                                              Margin="4 0 4 0"
+                                              Source="{x:Bind ImagePath, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=actors}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Padding" Value="0"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+
+                </StackPanel>
+
+                <!--Movie's comments by users-->
+                <StackPanel Orientation="Vertical"
+                            Margin="0 20 0 0">
+
+                    <!--Comments title and image-->
+                    <StackPanel Orientation="Horizontal"
+                                DataContext="{x:Bind UsersFeedbackData, Mode=OneWay}"
+                                Margin="16 16 0 0">
+
+                        <!--Comments Images-->
+                        <Grid x:Name="commentsBtn"
+                          Style="{StaticResource DetailsGridStyle}"
+                          Padding="0"
+                          BorderThickness="0"
+                          CornerRadius="40"
+                          Margin="8 0 8 0"
+                          Height="40"
+                          extension:Mouse.Cursor="Hand"
+                          Width="40"
+                          Tapped="commentsBtn_Tapped">
+                            <Image HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Stretch="None"
+                               Source="{StaticResource Comments}"/>
+                        </Grid>
+
+                        <!--Comments title-->
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="Comments"/>
+
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                               Margin="8 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="">(
+                            <Run Text="{Binding CountComments,  Mode=OneWay}"/>
+                            <Run Text=")"/>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <!--Comments list-->
+                    <ListView x:Name="movieComments"
+                              SelectionMode="None"
+                              Margin="32 20 0 0"
+                              Padding="0 0 0 8"
+                              ItemsSource="{x:Bind UsersComments, Mode=OneWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:UserComment">
+                                <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="0 8 0 8">
+                                    <!--user image-->
+                                    <controls:ImageEx Height="40"
+                                          Width="40"
+                                          CornerRadius="32"
+                                          BorderThickness="1"
+                                          BorderBrush="{StaticResource SystemAccentColor}"
+                                          Source="{Binding ImagePath, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=users}"/>
+
+                                    <!--users' name and comments-->
+                                    <StackPanel Orientation="Vertical"
+                                        Margin="12 0 0 0">
+                                        <!--users' name-->
+                                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                           Opacity="0.7"
+                                           Text="{x:Bind Name, Mode=OneWay}"/>
+                                        <!--users' comments-->
+                                        <TextBlock Style="{StaticResource SubtitleTextBlockStyle}"
+                                           Margin="0 4 0 0"
+                                           Text="{x:Bind Comment, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+
+                </StackPanel>
+
+                <!--Continue to categories view of the application-->
+                <Button x:Name="backBtn"
+                        Style="{StaticResource ButtonRoundedStyle}"
+                        Width="60"
+                        Height="60"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 32 20"
+                        extension:Mouse.Cursor="Hand"
+                        Click="backBtn_Click">
+                    <Button.Content>
+                        <FontIcon Glyph="{StaticResource BackIcon}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                    </Button.Content>
+                </Button>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+        <controls:InAppNotification x:Name="movieDetailsToastNotif"
+                                    Style="{StaticResource InAppNotificationStyle}">
+            <controls:InAppNotification.Content>
+                <StackPanel VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Orientation="Horizontal">
+
+                    <FontIcon x:Name="movieDetailsIconToastNotif"
+                                      Style="{StaticResource CaptionFontIconStyle}"
+                                      HorizontalAlignment="Left"
+                                      Foreground="IndianRed"/>
+
+                    <TextBlock x:Name="movieDetailsTextToastNotif"
+                                       Style="{StaticResource CaptionTextBlockStyle}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="8 0 0 0"
+                                       Foreground="IndianRed"/>
+                </StackPanel>
+            </controls:InAppNotification.Content>
+        </controls:InAppNotification>
+
+        <controls:Loading Style="{StaticResource LoadingNetworkIssueStyle}"
+                          x:Name="movieDetailsLoadingNetworkIssue"/>
+
+        <controls:Loading Style="{StaticResource LoadingDataStyle}"
+                          x:Name="movieDetailsLoadingData"/>
+    </Grid>
+
+</Page>

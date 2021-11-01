@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--TextBlock Foreground color in light theme-->
+    <Color x:Key="TextBlockForegroundColorLightTheme">#000000</Color>
+
+    <!--TextBlock Foreground color in dark theme-->
+    <Color x:Key="TextBlockForegroundColorDarkTheme">#FFFFFF</Color>
+
+
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="TextBlockForegroundSolidColorBrush" Color="{StaticResource TextBlockForegroundColorLightTheme}"/>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="TextBlockForegroundSolidColorBrush" Color="{StaticResource TextBlockForegroundColorDarkTheme}"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+
+</ResourceDictionary>

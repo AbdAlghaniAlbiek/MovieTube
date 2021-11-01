@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <x:String x:Key="ErrorIcon">&#xE783;</x:String>
+    <x:String x:Key="NetworkIssueIcon">&#xEB5E;</x:String>
+
+    <x:String x:Key="BackIcon">&#xE76B;</x:String>
+
+</ResourceDictionary>

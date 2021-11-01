@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--the foregrond color for font icon in light theme-->
+    <Color x:Key="FontIconForegroundColorLightTheme">#000000</Color>
+
+    <!--the foreground color for font icon in dark theme-->
+    <Color x:Key="FontIconForegroundColorDarkTheme">#FFFFFF</Color>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="FontIconForegroundSolidColorBrush" 
+                             Color="{StaticResource FontIconForegroundColorLightTheme}"/>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="FontIconForegroundSolidColorBrush" 
+                             Color="{StaticResource FontIconForegroundColorDarkTheme}"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+
+</ResourceDictionary>

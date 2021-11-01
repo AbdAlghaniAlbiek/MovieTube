@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="MovieTube.UI.Views.DeviceFamily_Desktop.MovieShowCase"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube.UI.Views.DeviceFamily_Desktop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:conv="using:MovieTube.UI.Converters"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Icons/MoviesViewIcons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/ControlsBrushes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid PointerMoved="mainGrid_PointerMoved" x:Name="mainGrid">
+
+        <MediaPlayerElement x:Name="mediaMovie"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Stretch"
+                            AreTransportControlsEnabled="True"/>
+
+        <!--Continue to categories view of the application-->
+        <Button x:Name="backBtn"
+                Style="{StaticResource ButtonRoundedStyle}"
+                Grid.Row="1"
+                Width="60"
+                Height="60"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="20 -80 0 0"
+                extensions:Mouse.Cursor="Hand"
+                Click="backBtn_Click">
+            <Button.Content>
+                <FontIcon Glyph="{StaticResource BackIcon}"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+            </Button.Content>
+        </Button>
+
+
+    </Grid>
+</Page>

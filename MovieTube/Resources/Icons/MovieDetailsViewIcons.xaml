@@ -1,0 +1,38 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <x:String x:Key="Liked">ms-appx:///Assets/Images/MovieDetailsViewImages/Liked_20px.png</x:String>
+    <x:String x:Key="DisLiked">ms-appx:///Assets/Images/MovieDetailsViewImages/Disliked_20px.png</x:String>
+    <x:String x:Key="FavouritePressed">ms-appx:///Assets/Images/MovieDetailsViewImages/Favourite_Pressed_20px.png</x:String>
+    
+    <x:String x:Key="ErrorIcon">&#xE783;</x:String>
+    <x:String x:Key="NetworkIssueIcon">&#xEB5E;</x:String>
+
+    <x:String x:Key="BackIcon">&#xE76B;</x:String>
+
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <x:String x:Key="Comments">ms-appx:///Assets/Images/MovieDetailsViewImages/comments_light_20px.png</x:String>
+            <x:String x:Key="Favourite">ms-appx:///Assets/Images/MovieDetailsViewImages/Favourite_Light_20px.png</x:String>
+            <x:String x:Key="Like">ms-appx:///Assets/Images/MovieDetailsViewImages/Like_Light_20px.png</x:String>
+            <x:String x:Key="Ratings">ms-appx:///Assets/Images/MovieDetailsViewImages/Rating_Light_20px.png</x:String>
+            <x:String x:Key="DisLike">ms-appx:///Assets/Images/MovieDetailsViewImages/Dislike_Light_20px.png</x:String>
+            <x:String x:Key="Video">ms-appx:///Assets/Images/MovieDetailsViewImages/Video_Light_50px.png</x:String>
+            <x:String x:Key="Photos">ms-appx:///Assets/Images/MovieDetailsViewImages/Photos_Light_20px.png</x:String> 
+            <x:String x:Key="Cast">ms-appx:///Assets/Images/MovieDetailsViewImages/Cast_Light_20px.png</x:String>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <x:String x:Key="Comments">ms-appx:///Assets/Images/MovieDetailsViewImages/comments_20px.png</x:String>
+            <x:String x:Key="Favourite">ms-appx:///Assets/Images/MovieDetailsViewImages/Favourite_20px.png</x:String>
+            <x:String x:Key="Like">ms-appx:///Assets/Images/MovieDetailsViewImages/Like_20px.png</x:String>
+            <x:String x:Key="Ratings">ms-appx:///Assets/Images/MovieDetailsViewImages/Rating_20px.png</x:String>
+            <x:String x:Key="DisLike">ms-appx:///Assets/Images/MovieDetailsViewImages/Dislike_20px.png</x:String>
+            <x:String x:Key="Video">ms-appx:///Assets/Images/MovieDetailsViewImages/Video_50px.png</x:String>
+            <x:String x:Key="Photos">ms-appx:///Assets/Images/MovieDetailsViewImages/Photos_20px.png</x:String>
+            <x:String x:Key="Cast">ms-appx:///Assets/Images/MovieDetailsViewImages/Cast_20px.png</x:String>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    
+</ResourceDictionary>

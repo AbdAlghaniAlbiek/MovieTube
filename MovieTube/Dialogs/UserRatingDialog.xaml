@@ -1,0 +1,124 @@
+﻿<ContentDialog
+    x:Class="MovieTube.UI.Dialogs.UserRatingDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube.UI.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title=""
+    PrimaryButtonStyle="{StaticResource MainButtonDialogStyle}"
+    CloseButtonStyle="{StaticResource NotMainButtonDialogStyle}"
+    PrimaryButtonText=""
+    CloseButtonText="Close"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    Background="{StaticResource MainGridBackgroundSolidColorBrush}"
+    BorderThickness="0"
+    BorderBrush="Transparent"
+    xmlns:converter="using:MovieTube.UI.Converters"
+    CornerRadius="8"
+    Loading="ContentDialog_Loading">
+
+    <ContentDialog.Resources>
+        <ResourceDictionary>
+            <converter:StringToDoubleConverter x:Key="StringToDoubleConverter"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/ControlsBrushes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentDialog.Resources>
+
+
+        <StackPanel>
+            
+            <ProgressBar x:Name="progLoadingData"
+                     HorizontalAlignment="Stretch"
+                     IsIndeterminate="True"
+                     Visibility="Collapsed"/>
+
+            <!--Rating title-->
+            <TextBlock Style="{StaticResource SubtitleAltTextBlockStyle}"
+                   Text="Rating"
+                   Margin="0 20 0 0"/>
+
+            <!--Ratings options for user-->
+            <Grid Margin="0 8 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Entertainment-->
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                       Text="Entertainment"
+                       Margin="0 4 0 0"/>
+
+                <RatingControl x:Name="entertainmentRatContr"
+                           Margin="32 4 0 0"
+                           VerticalAlignment="Center"
+                           Grid.Column="1"
+                           ValueChanged="EntertainmentRatingControl_ValueChanged">
+                    <RatingControl.RenderTransform>
+                        <ScaleTransform ScaleX="0.8"
+                                    ScaleY="0.8"/>
+                    </RatingControl.RenderTransform>
+                </RatingControl>
+
+
+                <!--Perform artists-->
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                       Grid.Row="1"
+                        Text="Perform artists"
+                       Margin="0 4 0 0"/>
+
+                <RatingControl x:Name="performActorRatContr" 
+                           Margin="32 4 0 0"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           ValueChanged="PerformActorRatingControl_ValueChanged">
+                    <RatingControl.RenderTransform>
+                        <ScaleTransform ScaleX="0.8"
+                                    ScaleY="0.8"/>
+                    </RatingControl.RenderTransform>
+                </RatingControl>
+
+                <!--Resolution-->
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                       Grid.Row="2"
+                       Text="Resolution"
+                       Margin="0 4 0 0"/>
+
+                <RatingControl x:Name="resolutionRatContr"
+                           Margin="32 4 0 0"
+                           VerticalAlignment="Center"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           ValueChanged="ResolutionRatingControl_ValueChanged">
+                    <RatingControl.RenderTransform>
+                        <ScaleTransform ScaleX="0.8"
+                                    ScaleY="0.8"/>
+                    </RatingControl.RenderTransform>
+                </RatingControl>
+            </Grid>
+
+            <!--Comment title-->
+            <TextBlock Style="{StaticResource SubtitleAltTextBlockStyle}"
+                   Text="Comment"
+                   Margin="0 16 0 0"/>
+
+            <!--Comment textbox-->
+        <TextBox x:Name="commentTxtBox"
+                 HorizontalAlignment="Stretch"
+                 PlaceholderText="Enter you comment"
+                 Margin="0 12 0 16"
+                 TextChanged="TextBox_TextChanged"/>
+    </StackPanel>
+    
+</ContentDialog>

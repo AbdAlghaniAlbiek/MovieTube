@@ -1,0 +1,33 @@
+﻿<Application
+    x:Class="MovieTube.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <x:String x:Key="SystemAccentColor">#E8B30D</x:String>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/TitleBarColors.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/ControlsBrushes.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/RatingControlBrushes.xaml"/>
+
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/ContainersStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/FontIconStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/PivotStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/GridViewItemStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/ImageExStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/ImageStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/InAppNotificationStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/ListViewItemStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/LoadingStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/TextboxesStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Styles/ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

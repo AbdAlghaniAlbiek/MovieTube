@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="RatingControlLight">#000000</Color>
+    <Color x:Key="RatingControlDark">#FFFFFF</Color>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="RatingControlSelectedForeground" Color="{StaticResource SystemAccentColor}" />
+            <SolidColorBrush x:Key="RatingControlUnselectedForeground" Color="{StaticResource RatingControlLight}" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="RatingControlSelectedForeground" Color="{StaticResource SystemAccentColor}" />
+            <SolidColorBrush x:Key="RatingControlUnselectedForeground" Color="{StaticResource RatingControlDark}"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    
+   
+</ResourceDictionary>

@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!--Title bar background and forground colors in all states in light theme-->
+        <!--Title bar buttons background in general state and in inactive state must be transparent-->
+        <ResourceDictionary x:Key="Light">
+            <Color x:Key="TitleBarButtonForegroundColor">#000000</Color>
+
+            <Color x:Key="TitleBarButtonHoverBackgroundColor">#A0A0A0</Color>
+            <Color x:Key="TitleBarButtonHoverForegroundColor">#000000</Color>
+
+            <Color x:Key="TitleBarButtonPressedBackgroundColor">#898989</Color>
+            <Color x:Key="TitleBarButtonPressedForegroundColor">#000000</Color>
+        </ResourceDictionary>
+
+
+        <!--Title bar background and forground colors in all states in Dark theme-->
+        <!--Title bar buttons background in general state and in inactive state must be transparent-->
+        <ResourceDictionary x:Key="Dark">
+            <Color x:Key="TitleBarButtonForegroundColor">#FFFFFF</Color>
+
+            <Color x:Key="TitleBarButtonHoverBackgroundColor">#333333</Color>
+            <Color x:Key="TitleBarButtonHoverForegroundColor">#FFFFFF</Color>
+
+            <Color x:Key="TitleBarButtonPressedBackgroundColor">#4D4D4D</Color>
+            <Color x:Key="TitleBarButtonPressedForegroundColor">#FFFFFF</Color>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

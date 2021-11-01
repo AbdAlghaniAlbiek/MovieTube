@@ -1,0 +1,259 @@
+﻿<Page
+    x:Class="MovieTube.UI.Views.DeviceFamily_Desktop.CategoriesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube.UI.Views.DeviceFamily_Desktop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:extenstions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:models="using:MovieTube.Functions.Models"
+    xmlns:converter="using:MovieTube.UI.Converters"
+    xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loading="Page_Loading">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Color x:Key="EllipseFillLight">#000000</Color>
+            <Color x:Key="EllipseStrokeLight">#000000</Color>
+
+            <Color x:Key="EllipseFillDark">#FFFFFF</Color>
+            <Color x:Key="EllipseStrokeDark">#FFFFFF</Color>
+
+            <converter:ImageURLConverter  x:Key="ImageURLConverter"/>
+            <converter:StringToDoubleConverter  x:Key="StringToDoubleConverter"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Icons/CategoriesViewIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="EllipseFill" Color="{StaticResource EllipseFillLight}"/>
+                    <SolidColorBrush x:Key="EllipseStroke" Color="{StaticResource EllipseStrokeLight}"/>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="EllipseFill" Color="{StaticResource EllipseFillDark}"/>
+                    <SolidColorBrush x:Key="EllipseStroke" Color="{StaticResource EllipseStrokeDark}"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Style="{StaticResource MainGridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Best Movies-->
+        <FlipView x:Name="bestMoviesFlipView"
+                  Grid.Row="0"
+                  Height="320"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  ItemsSource="{x:Bind BestMovies,Mode=OneWay}">
+            <FlipView.ItemTemplate>
+                <DataTemplate x:DataType="models:Movie">
+                    <Grid HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch">
+
+                        <!--best-movie image-->
+                        <Image HorizontalAlignment="Stretch"
+                               VerticalAlignment="Stretch"
+                               Stretch="Fill"
+                               Source="{Binding ImagePath, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=banners}"/>
+
+                        <!--It represents the black with opacity background above the image and contains on some details about this movie-->
+                        <Grid HorizontalAlignment="Right"
+                              VerticalAlignment="Stretch"
+                              Width="340"
+                              CornerRadius="0 0 0 260">
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity=".9"/>
+                            </Grid.Background>
+                        </Grid>
+
+                        <!--name of movie and its rating-->
+                        <StackPanel Orientation="Vertical"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Margin="0 100 80 0">
+
+                            <TextBlock Style="{StaticResource SubheaderTextBlockStyle}"
+                                           Text="{Binding Name, Mode=OneWay}"/>
+
+                            <RatingControl VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           Margin="0 16 0 0"
+                                           IsReadOnly="True"
+                                           Value="{Binding Rate, Mode=OneWay, Converter={StaticResource StringToDoubleConverter}}"/>
+                        </StackPanel>
+
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+
+        <!--button for go backward to pervious movie-->
+        <Button x:Name="backBesMovBtn"
+                Style="{StaticResource ButtonRoundedStyle}"
+                CornerRadius="0 28 28 0"
+                Width="36"
+                HorizontalAlignment="Left"
+                extenstions:Mouse.Cursor="Hand"
+                Click="backBesMovBtn_Click">
+            <Button.Content>
+                <FontIcon Margin="-8 0 0 0" Glyph="{StaticResource BackIcon}" Style="{StaticResource BigFontIconStyle}"/>
+            </Button.Content>
+        </Button>
+
+        <!--button for go forward to next movie-->
+        <Button x:Name="forwarBesMovBtn"
+                Style="{StaticResource ButtonRoundedStyle}"
+                CornerRadius="28 0 0 28"
+                Width="36"
+                HorizontalAlignment="Right"
+                extenstions:Mouse.Cursor="Hand"
+                Click="forwarBesMovBtn_Click">
+            <Button.Content>
+                <FontIcon Margin="0 0 -6 0" Glyph="{StaticResource ContinueIcon}" Style="{StaticResource BigFontIconStyle}"/>
+            </Button.Content>
+        </Button>
+
+        <!--Enable to moving to forward or backward movie-->
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 0 16">
+            <Ellipse x:Name="firstMovie" Width="12" Height="12" StrokeThickness="2" Fill="{StaticResource EllipseFill}" Stroke="{StaticResource EllipseStroke}" VerticalAlignment="Center" Margin="8 0 8 0" Tapped="firstMovie_Tapped" extenstions:Mouse.Cursor="Hand"/>
+            <Ellipse x:Name="secondMovie" Width="12" Height="12" StrokeThickness="2" Stroke="{StaticResource EllipseStroke}" VerticalAlignment="Center" Margin="4 0 4 0" Tapped="secondMovie_Tapped" extenstions:Mouse.Cursor="Hand"/>
+            <Ellipse x:Name="thirdMovie" Width="12" Height="12" StrokeThickness="2" Stroke="{StaticResource EllipseStroke}" VerticalAlignment="Center" Margin="4 0 4 0" Tapped="thirdMovie_Tapped" extenstions:Mouse.Cursor="Hand"/>
+            <Ellipse x:Name="fourthMovie" Width="12" Height="12" StrokeThickness="2" Stroke="{StaticResource EllipseStroke}" VerticalAlignment="Center" Margin="4 0 4 0" Tapped="fourthMovie_Tapped" extenstions:Mouse.Cursor="Hand"/>
+            <Ellipse x:Name="fifthMovie" Width="12" Height="12" StrokeThickness="2" Stroke="{StaticResource EllipseStroke}" VerticalAlignment="Center" Margin="4 0 4 0" Tapped="fifthMovie_Tapped" extenstions:Mouse.Cursor="Hand"/>
+
+        </StackPanel>
+        
+        <!--Contains on Categories title and grid that contains on categories items-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Categories Title-->
+            <TextBlock Style="{StaticResource SubtitleAltTextBlockStyle}" 
+                       Margin="24 16 0 0"
+                       Text="Categories"/>
+
+            <!--AdaptivGridView (in mobile state)-->
+            <controls:AdaptiveGridView x:Name="categoriesMobileState" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                       ItemsSource="{x:Bind Categories, Mode=OneWay}"
+                                       Grid.Row="1"
+                                       Margin="24 20 24 0"
+                                       Visibility="Collapsed"
+                                       animations:ReorderGridAnimation.Duration="400"
+                                       SelectionChanged="categoriesMobileState_SelectionChanged">
+                <controls:AdaptiveGridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Category">
+                        <Grid Height="300"
+                                      extenstions:Mouse.Cursor="Hand"
+                                      Width="200"
+                                      CornerRadius="8"
+                                      Background="Transparent">
+                            <Image HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch"
+                                           Stretch="Fill"
+                                          Source="{Binding ImagePath, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=posters}"/>
+
+                            <Grid HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Center"
+                                          Height="60">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="{StaticResource SystemAccentColor}" Opacity=".5"/>
+                                </Grid.Background>
+                            </Grid>
+
+                            <TextBlock VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Style="{StaticResource BodyTextBlockStyle}"
+                                               Text="{Binding Name, Mode=OneWay}"/>
+                        </Grid>
+
+                    </DataTemplate>
+                </controls:AdaptiveGridView.ItemTemplate>
+            </controls:AdaptiveGridView>
+
+            <!--GridView (in table and desktop state)-->
+            <GridView x:Name="categoriesDesktopState" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      ItemsSource="{x:Bind Categories, Mode=OneWay}"
+                      SelectionChanged="categoriesDesktopState_SelectionChanged"
+                      ItemContainerStyle="{StaticResource GridViewItemExpanded}"
+                      Grid.Row="1"
+                      animations:ReorderGridAnimation.Duration="400"
+                      Margin="24 20 24 0">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Category">
+                        <Grid Height="300"
+                              extenstions:Mouse.Cursor="Hand"
+                              Width="200"
+                              CornerRadius="8"
+                              Background="Transparent">
+                            <Image HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Source="{Binding ImagePath, Mode=OneWay, Converter={StaticResource ImageURLConverter}, ConverterParameter=posters}"/>
+
+                            <Grid HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Center"
+                                   Height="60">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="{StaticResource SystemAccentColor}" Opacity="0.6"/>
+                                </Grid.Background>
+                            </Grid>
+
+                            <TextBlock VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Style="{StaticResource BodyTextBlockStyle}"
+                                               Text="{Binding Name, Mode=OneWay}"/>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+
+            <!--Notification that tells the user what the result from categories pivot-->
+            <controls:InAppNotification x:Name="categoriesToastNotif"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Bottom"
+                                        Style="{StaticResource InAppNotificationStyle}"
+                                        Grid.Row="1">
+                <controls:InAppNotification.Content>
+                    <StackPanel VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Orientation="Horizontal">
+
+                        <FontIcon x:Name="categoriesIconToastNotif"
+                                          Style="{StaticResource CaptionFontIconStyle}"
+                                          HorizontalAlignment="Left"
+                                          Foreground="IndianRed"/>
+
+                        <TextBlock x:Name="categoriesTextToastNotif"
+                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Margin="8 0 0 0"
+                                           Foreground="IndianRed"/>
+                    </StackPanel>
+                </controls:InAppNotification.Content>
+            </controls:InAppNotification>
+        </Grid>
+
+        <controls:Loading Style="{StaticResource LoadingNetworkIssueStyle}"
+                          x:Name="categoriesLoadingNetworkIssue" Grid.RowSpan="2"/>
+
+        <controls:Loading Style="{StaticResource LoadingDataStyle}"
+                          x:Name="categoriesLoadingData" Grid.RowSpan="2"/>
+    </Grid>
+
+</Page>

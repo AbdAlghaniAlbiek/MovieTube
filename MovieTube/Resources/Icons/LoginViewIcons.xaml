@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <x:String x:Key="EmailIcon">&#xE715;</x:String>
+    <x:String x:Key="PasswordIcon">&#xE8D7;</x:String>
+    <x:String x:Key="SendIcon">&#xE724;</x:String>
+    <x:String x:Key="NameIcon">&#xE77B;</x:String>
+
+    <x:String x:Key="WarningImage">ms-appx:///Assets/Images/LoginViewImages/Warning_20px.png</x:String>
+
+    <x:String x:Key="ErrorIcon">&#xE783;</x:String>
+    <x:String x:Key="NetworkIssueIcon">&#xEB5E;</x:String>
+
+    <x:String x:Key="LockImage">ms-appx:///Assets/Images/LoginViewImages/Lock_100px.png</x:String>
+    <x:String x:Key="LockIcon">&#xE72E;</x:String>
+
+
+    <x:String x:Key="ProtectImage">ms-appx:///Assets/Images/LoginViewImages/Protect_100px.png</x:String>
+    <x:String x:Key="ContinueIcon">&#xE76C;</x:String>
+    <x:String x:Key="BackIcon">&#xE76B;</x:String>
+
+    <x:String x:Key="MovieBackgroundMobile">ms-appx:///Assets/Images/LoginViewImages/MovieBackgroundMobile.jpg</x:String>
+    <x:String x:Key="MovieBackground">ms-appx:///Assets/Images/LoginViewImages/MovieBackground.jpg</x:String>
+
+</ResourceDictionary>

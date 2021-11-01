@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <x:String x:Key="UnLoadItemImage">ms-appx:///Assets/Images/PlaceHolderImages/PlaceHolderItemImage_48px.png</x:String>
+    <x:String x:Key="UnLoadProfileImage">ms-appx:///Assets/Images/PlaceHolderImages/PlaceHolderProfileImage_180px.png</x:String>
+
+</ResourceDictionary>

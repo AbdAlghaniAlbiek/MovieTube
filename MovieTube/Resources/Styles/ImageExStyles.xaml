@@ -1,0 +1,52 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:local="using:MovieTube.UI">
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Resources/Brushes/ImageExBrushes.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Resources/Icons/PlaceHolderIcons.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ItemImageExStyle" TargetType="controls:ImageEx">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="EnableLazyLoading" Value="True"/>
+        <Setter Property="Background" Value="{StaticResource ImageExSolidColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="PlaceholderStretch" Value="None"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="PlaceholderSource">
+            <Setter.Value>
+                <BitmapImage UriSource="{StaticResource UnLoadItemImage}"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ProfileImageExStyle" TargetType="controls:ImageEx">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="200"/>
+        <Setter Property="EnableLazyLoading" Value="True"/>
+        <Setter Property="Background" Value="{StaticResource ImageExSolidColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="PlaceholderStretch" Value="None"/>
+        <Setter Property="Stretch" Value="UniformToFill"/>
+        <Setter Property="PlaceholderSource">
+            <Setter.Value>
+                <BitmapImage UriSource="{StaticResource UnLoadProfileImage}"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

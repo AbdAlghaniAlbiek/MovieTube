@@ -1,0 +1,691 @@
+﻿<Page
+    x:Class="MovieTube.UI.Views.DeviceFamily_Desktop.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieTube.UI.Views.DeviceFamily_Desktop"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loading="Page_Loading">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/Icons/LoginViewIcons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Resources/Brushes/ControlsBrushes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <!--Background image (montain image) for this page-->
+        <Image HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"
+               Stretch="UniformToFill"
+               Source="{StaticResource MovieBackground}"/>
+
+        <!--I added this grid to make a black color background-->
+        <Grid>
+
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Light">
+                            <Color x:Key="ImageBackgroundColor">#FFFFFF</Color>
+                            <x:Double x:Key="OpacityValue">0.3</x:Double>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Dark">
+                            <Color x:Key="ImageBackgroundColor">#000000</Color>
+                            <x:Double x:Key="OpacityValue">0.9</x:Double>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Grid.Background>
+                <SolidColorBrush Color="{ThemeResource ImageBackgroundColor}" 
+                                 Opacity="{ThemeResource OpacityValue}"/>
+            </Grid.Background>
+
+            <!--this grid only for adding some corners SSfor edges for pivot 
+                beacause pivot doesn't response to corner radius property-->
+
+            <controls:DropShadowPanel HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"
+                                      OffsetY="2"
+                                      ShadowOpacity="0.8"
+                                      BlurRadius="20">
+                <Grid Width="460"
+                      Style="{StaticResource  MainGridStyle}"
+                      Height="640"
+                      HorizontalAlignment="Center"
+                      CornerRadius="16"
+                      Padding="8 0 8 0">
+
+                    <!--Contains on Login and register -->
+                    <Pivot x:Name="mainPivot"
+                           Margin="0, -32, 0, 0"
+                           HorizontalAlignment="Center">
+
+                        <!--Contains on Login process-->
+                        <PivotItem x:Name="pivotLogin">
+                            <Grid
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--The name of this panel (Login)-->
+                                <ProgressBar x:Name="progLoginLoading" 
+                                             IsIndeterminate="false"
+                                             Grid.Row="0"
+                                             VerticalAlignment="Top"
+                                             HorizontalAlignment="Stretch"
+                                             CornerRadius="0 0 4 4"
+                                             Foreground="{StaticResource SystemAccentColor}"
+                                             Background="Transparent"/>
+                                <TextBlock Text="Sign in"
+                                           Style="{StaticResource SubheaderTextBlockStyle}"
+                                           Grid.Row="0"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <!--The message from this panel-->
+                                <Image Style="{StaticResource TitleImageStyle}"
+                                       Source="{StaticResource ProtectImage}"
+                                       Grid.Row="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"/>
+                                <TextBlock Text="Please enter your Email password to access to server system"
+                               Style="{StaticResource BodyTextBlockStyle}"
+                               Grid.Row="1"
+                               Margin="44 0 0 0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"/>
+
+                                <!--Textbox to enter the code inside it-->
+                                <StackPanel Orientation="Horizontal"
+                                            Grid.Row="2"
+                                            Margin="30 0 0 0">
+                                    <FontIcon x:Name="loginErrorIconEmail"
+                                              Style="{StaticResource CaptionFontIconStyle}"
+                                              Glyph="{StaticResource ErrorIcon}"
+                                              HorizontalAlignment="Left"
+                                              Margin="0 2.5 0 0"
+                                              Visibility="Collapsed"
+                                              VerticalAlignment="Top"
+                                              Foreground="IndianRed"
+                                              extensions:VisualExtensions.CenterPoint="50,50,0">
+
+                                        <animations:Implicit.ShowAnimations>
+                                            <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                        </animations:Implicit.ShowAnimations>
+
+                                        <animations:Implicit.HideAnimations>
+                                            <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                        </animations:Implicit.HideAnimations>
+
+                                    </FontIcon>
+                                    <TextBlock x:Name="loginErrorTextEmail"
+                                               Margin="4 0 0 0"
+                                               Text="Incorrect Email format (example@gmail.com)"
+                                               Style="{StaticResource CaptionTextBlockStyle}"
+                                               VerticalAlignment="Top"
+                                               Foreground="IndianRed"
+                                               Visibility="Collapsed"
+                                               extensions:VisualExtensions.CenterPoint="50,50,0">
+                                        <animations:Implicit.ShowAnimations>
+                                            <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                        </animations:Implicit.ShowAnimations>
+                        
+                                        <animations:Implicit.HideAnimations>
+                                            <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                        </animations:Implicit.HideAnimations>
+                                    </TextBlock>
+                                    </StackPanel>
+                                <StackPanel Orientation="Horizontal"
+                                            Grid.Row="2">
+                                    <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                          Glyph="{StaticResource EmailIcon}"
+                                          HorizontalAlignment="Left"
+                                          Foreground="{StaticResource SystemAccentColor}"/>
+                                    <TextBox x:Name="txtEmailLogin"
+                                             Text="abdalghanialbiek@gmail.com"
+                                         PlaceholderText="Email"
+                                         Margin="12 0 0 0"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Center"
+                                         Width="320"
+                                         BorderThickness="0 0 0 2"
+                                         Background="Transparent"
+                                         IsSpellCheckEnabled="False"
+                                         CornerRadius="2"
+                                         TextChanged="txtEmailLogin_TextChanged">
+                                    </TextBox>
+                                </StackPanel>
+                                
+                                <!--Textbox to enter the code inside it-->
+                                <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                          Glyph="{StaticResource PasswordIcon}"
+                                          HorizontalAlignment="Left"
+                                          Foreground="{StaticResource SystemAccentColor}"
+                                          Grid.Row="3"/>
+                                <PasswordBox x:Name="txtPasswordLogin"
+                                             PlaceholderText="Password"
+                                             Password="asdfjkl;"
+                                             Grid.Row="3"
+                                             Margin="32 0 0 0"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Center"
+                                             Width="320"
+                                             BorderThickness="0 0 0 2"
+                                             Background="Transparent"
+                                             CornerRadius="2">
+                                </PasswordBox>
+
+                                <TextBlock Style="{StaticResource CaptionAltTextBlockStyle}"
+                                           Grid.Row="4"
+                                           HorizontalAlignment="Left"
+                                           Margin="16 0 0 0"
+                                           VerticalAlignment="Center"
+                                           Text="">You don't have an account, here you can
+                                    <Hyperlink x:Name="hyplinkGoToSignUp" 
+                                               TextDecorations="None"
+                                               FontSize="13"
+                                               Click="hyplinkGoToSignUp_Click">Sign up.</Hyperlink>
+                                </TextBlock>
+
+                                <!--Continue to portal of the application-->
+                                <Button x:Name="btnLogin"
+                                        Style="{StaticResource ButtonRoundedStyle}"
+                                        Grid.Row="5"
+                                        Grid.RowSpan="2"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        FontSize="20"
+                                        Margin="0 0 12 60"
+                                        extensions:Mouse.Cursor="Hand"
+                                        Click="btnLogin_Click">
+                                    <Button.Content>
+                                        <FontIcon Glyph="{StaticResource ContinueIcon}"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                    </Button.Content>
+                                </Button>
+
+                                <!--name of app and version-->
+                                <TextBlock HorizontalAlignment="Left"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 8"
+                                           Grid.Row="6"
+                                           Style="{StaticResource CaptionAltTextBlockStyle}"
+                                           Text="MovieTube 1.0.0v"
+                                           FontFamily="ms-appx:///Assets/Fonts/ProjectTitleFont/giddyupstd.otf#giddyup std"/>
+
+                                <!--Notification that tells the user what the result from login pivot-->
+                                <controls:InAppNotification x:Name="loginToastNotif"
+                                                            Style="{StaticResource InAppNotificationStyle}"
+                                                            Grid.Row="5"
+                                                            Grid.RowSpan="3">
+                                    <controls:InAppNotification.Content>
+                                            <StackPanel VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch"
+                                            Orientation="Horizontal">
+
+                                                <FontIcon x:Name="loginIconToastNotif"
+                                                          Style="{StaticResource CaptionFontIconStyle}"
+                                                          HorizontalAlignment="Left"
+                                                          Foreground="IndianRed"/>
+
+                                                <TextBlock x:Name="loginTextToastNotif"
+                                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Left"
+                                                           Margin="8 0 0 0"
+                                                           Foreground="IndianRed"/>
+
+                                            </StackPanel>
+                                    </controls:InAppNotification.Content>
+                                </controls:InAppNotification>
+
+                            </Grid>
+                        </PivotItem>
+
+                        <!--Contains on Register process-->
+                        <PivotItem x:Name="pivotRegister">
+                            <Grid
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--The Title of register panel-->
+                                <ProgressBar x:Name="progRegisterLoading" 
+                                             IsIndeterminate="false"
+                                             Grid.Row="0"
+                                             VerticalAlignment="Top"
+                                             HorizontalAlignment="Stretch"
+                                             CornerRadius="0 0 4 4"
+                                             Background="Transparent"
+                                             Foreground="{StaticResource SystemAccentColor}"/>
+
+                                <!--This button for come back to sign in pivot-->
+                                <Button x:Name="backToSignInBtn"
+                                        Style="{StaticResource ButtonRoundedStyle}"
+                                        Height="48"
+                                        Margin="0 8 0 0"
+                                        Width="48"
+                                        Grid.Row="0"
+                                        extensions:Mouse.Cursor="Hand"
+                                        Click="backToSignInBtn_Click">
+                                    <Button.Content>
+                                        <FontIcon Style="{StaticResource SmallFontIconStyle}"
+                                                  Glyph="{StaticResource BackIcon}"/>
+                                    </Button.Content>
+                                </Button>
+
+                                <!--Sign up title-->
+                                <TextBlock Text="Sing up"
+                                           Style="{StaticResource SubheaderTextBlockStyle}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <!--The message from this panel-->
+                                <Image Style="{StaticResource TitleImageStyle}"
+                                       Source="{StaticResource WarningImage}"
+                                       Grid.Row="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"/>
+                                <TextBlock Text="You don't have an account, please submit your account to access to MovieTube app"
+                                           Style="{StaticResource BodyTextBlockStyle}"
+                                           Grid.Row="1"
+                                           Margin="44 0 0 0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"/>
+
+                                <!-- user name-->
+                                <StackPanel Orientation="Horizontal"
+                                             Margin="24 12 0 0"
+                                            Grid.Row="2">
+                                    <FontIcon x:Name="registerErrorIconName"
+                                          Style="{StaticResource CaptionFontIconStyle}"
+                                          Glyph="{StaticResource ErrorIcon}"
+                                          HorizontalAlignment="Left"
+                                          Visibility="Collapsed"
+                                          Margin="0 2.5 0 8"
+                                          VerticalAlignment="Top"
+                                          Foreground="IndianRed"
+                                         extensions:VisualExtensions.CenterPoint="50,50,0">
+                                        <animations:Implicit.ShowAnimations>
+                                            <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                        </animations:Implicit.ShowAnimations>
+
+                                        <animations:Implicit.HideAnimations>
+                                            <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                        </animations:Implicit.HideAnimations>
+                                    </FontIcon>
+                                    <TextBlock x:Name="registerErrorTextName"
+                                           Text="Incorrect Name format (Only Characters eg: Abd Alghani)"
+                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                           Margin="4 0 0 0"
+                                           VerticalAlignment="Top"
+                                           Foreground="IndianRed"
+                                           Visibility="Collapsed"
+                                           extensions:VisualExtensions.CenterPoint="50,50,0">
+                                    <animations:Implicit.ShowAnimations>
+                                        <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                    </animations:Implicit.ShowAnimations>
+                        
+                                    <animations:Implicit.HideAnimations>
+                                        <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                    </animations:Implicit.HideAnimations>
+                                    </TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal"
+                                            Grid.Row="2"
+                                                Margin="0 16 0 0">
+                                    <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                                  Glyph="{StaticResource NameIcon}"
+                                                  HorizontalAlignment="Left"
+                                                  Foreground="{StaticResource SystemAccentColor}"/>
+                                    <TextBox x:Name="txtName" 
+                                                 PlaceholderText="Name"
+                                                 Margin="8 0 0 0"
+                                                 HorizontalAlignment="Left"
+                                                 VerticalAlignment="Center"
+                                                 Width="320"
+                                                 BorderThickness="0 0 0 2"
+                                                 Background="Transparent"
+                                                 IsSpellCheckEnabled="False"
+                                                 CornerRadius="2"
+                                                TextChanged="txtName_TextChanged">
+                                    </TextBox>
+                                </StackPanel>
+
+                                <!--Email addresss-->
+                                <StackPanel Orientation="Horizontal"
+                                            Grid.Row="3"
+                                            Margin="26 4 0 0">
+                                    <FontIcon x:Name="registerErrorIconEmail"
+                                              Style="{StaticResource CaptionFontIconStyle}"
+                                              Glyph="{StaticResource ErrorIcon}"
+                                              HorizontalAlignment="Left"
+                                              Margin="0 2.5 0 0"
+                                              Visibility="Collapsed"
+                                              VerticalAlignment="Top"
+                                              Foreground="IndianRed"
+                                              extensions:VisualExtensions.CenterPoint="50,50,0">
+
+                                        <animations:Implicit.ShowAnimations>
+                                            <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                        </animations:Implicit.ShowAnimations>
+
+                                        <animations:Implicit.HideAnimations>
+                                            <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                        </animations:Implicit.HideAnimations>
+
+                                    </FontIcon>
+                                    <TextBlock x:Name="registerErrorTextEmail"
+                                               Margin="4 0 0 0"
+                                               Text="Incorrect Email format (example@gmail.com)"
+                                               Style="{StaticResource CaptionTextBlockStyle}"
+                                               VerticalAlignment="Top"
+                                               Foreground="IndianRed"
+                                               Visibility="Collapsed"
+                                               extensions:VisualExtensions.CenterPoint="50,50,0">
+                                        <animations:Implicit.ShowAnimations>
+                                            <animations:OpacityAnimation From="0" To="1" Duration="0:0:1"/>
+                                        </animations:Implicit.ShowAnimations>
+                        
+                                        <animations:Implicit.HideAnimations>
+                                            <animations:OpacityAnimation To="0" Duration="0:0:0.5"/>
+                                        </animations:Implicit.HideAnimations>
+                                    </TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal"
+                                                Grid.Row="3">
+                                        <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                          Glyph="{StaticResource EmailIcon}"
+                                          HorizontalAlignment="Left"
+                                          Foreground="{StaticResource SystemAccentColor}"
+                                          Grid.Row="3"/>
+                                        <TextBox x:Name="txtEmail"
+                                         PlaceholderText="Email"
+                                         Grid.Row="3"
+                                         Margin="8 0 0 0"
+                                         IsSpellCheckEnabled="False"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Center"
+                                         Width="320"
+                                         BorderThickness="0 0 0 2"
+                                         Background="Transparent"
+                                         CornerRadius="2"
+                                         TextChanged="txtEmail_TextChanged">
+                                        </TextBox>
+                                    </StackPanel>
+                                
+                                <!--Password box to submit a password to server user-->
+                                <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                          Glyph="{StaticResource PasswordIcon}"
+                                          HorizontalAlignment="Left"
+                                          Margin="0 0 0 16"
+                                          Foreground="{StaticResource SystemAccentColor}"
+                                          Grid.Row="4"/>
+                                <PasswordBox x:Name="txtPassword"
+                                             PlaceholderText="Password"
+                                             Grid.Row="4"
+                                             Margin="30 0 0 16"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Center"
+                                             Width="320"
+                                             BorderThickness="0 0 0 2"
+                                             Background="Transparent"
+                                             CornerRadius="2">
+                                </PasswordBox>
+
+                                <!--Submit password to save it in security file-->
+                                <Button x:Name="btnSubmit"
+                                        Content="Submit"
+                                        Grid.Row="5"
+                                        Width="100"
+                                        Height="40"
+                                        Margin="0 20 12 0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        CornerRadius="4"
+                                        extensions:Mouse.Cursor="Hand"
+                                        Click="BtnSubmit_Click">
+                                </Button>
+
+                                <!--name of app and version-->
+                                <TextBlock HorizontalAlignment="Left"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 8"
+                                           Grid.Row="6"
+                                           Style="{StaticResource CaptionAltTextBlockStyle}"
+                                           Text="MovieTube 1.0.0v"
+                                           FontFamily="ms-appx:///Assets/Fonts/ProjectTitleFont/giddyupstd.otf#giddyup std"/>
+
+
+                                <!--Notification that tell the user the result of login-->
+                                <controls:InAppNotification x:Name="registerToastNotif"
+                                    Style="{StaticResource InAppNotificationStyle}"
+                                    Grid.Row="5"
+                                    Grid.RowSpan="2">
+                                    <controls:InAppNotification.Content>
+                                            <StackPanel VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch"
+                                            Orientation="Horizontal">
+
+                                                <FontIcon x:Name="registerIconToastNotif"
+                                              Style="{StaticResource CaptionFontIconStyle}"
+                                              HorizontalAlignment="Left"
+                                              Foreground="IndianRed"/>
+
+                                                <TextBlock x:Name="registerTextToastNotif"
+                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Margin="8 0 0 0"
+                                           Foreground="IndianRed"/>
+                                            </StackPanel>
+                                    </controls:InAppNotification.Content>
+                                </controls:InAppNotification>
+                            </Grid>
+                        </PivotItem>
+
+                        <!--Contains on Verify process-->
+                        <PivotItem x:Name="pivotVerify">
+                            <Grid
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch">  
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Title image of verify panel-->
+                                <ProgressBar x:Name="progVerifyLoading" 
+                                             IsIndeterminate="false"
+                                             Grid.Row="0"
+                                             VerticalAlignment="Top"
+                                             HorizontalAlignment="Stretch"
+                                             CornerRadius="0 0 4 4"
+                                             Background="Transparent"
+                                             Foreground="{StaticResource SystemAccentColor}"/>
+                                <Image Source="{StaticResource LockImage}"
+                                       Width="100"
+                                       Height="100"
+                                       Grid.Row="0"
+                                       HorizontalAlignment="Center"/>
+
+                                <!--The message from this panel-->
+                                <Image Style="{StaticResource TitleImageStyle}"
+                                       Source="{StaticResource WarningImage}"
+                                       Grid.Row="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"/>
+                                <TextBlock Text="We send an email message to you, It has a code. enter it to this textbox"
+                                           Style="{StaticResource BodyTextBlockStyle}"
+                                           Grid.Row="1"
+                                           Margin="44 0 0 0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"/>
+
+                                <!--Textbox to enter the code inside it-->
+                                <FontIcon Style="{StaticResource BigFontIconStyle}"
+                                          Glyph="{StaticResource LockIcon}"
+                                          HorizontalAlignment="Left"
+                                          Foreground="{StaticResource SystemAccentColor}"
+                                          Grid.Row="2"/>
+                                <TextBox x:Name="txtCode"
+                                         PlaceholderText="Code"
+                                         Grid.Row="2"
+                                         Margin="32 0 0 0"
+                                         IsSpellCheckEnabled="False"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Center"
+                                         Width="320"
+                                         BorderThickness="0 0 0 2"
+                                         Background="Transparent"
+                                         CornerRadius="2">      
+                                </TextBox>
+
+
+                                <!--Verify the account after fill textbox with code-->
+                                <Button x:Name="btnVerify"
+                                        Content="Verify"
+                                        Grid.Row="3"
+                                        Width="100"
+                                        Height="40"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Margin="0 32 12 0"
+                                        extensions:Mouse.Cursor="Hand"
+                                        CornerRadius="4"
+                                        Click="BtnVerify_Click">
+                                </Button>
+
+                                <!--name of app and version-->
+                                <TextBlock HorizontalAlignment="Left"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 8"
+                                           Grid.Row="4"
+                                           Style="{StaticResource CaptionAltTextBlockStyle}"
+                                           Text="MovieTube 1.0.0v"
+                                           FontFamily="ms-appx:///Assets/Fonts/ProjectTitleFont/giddyupstd.otf#giddyup std"/>
+
+
+
+                                <!--Notification that tell the user what is the result from verify pivot submitation-->
+                                <controls:InAppNotification x:Name="verifyToastNotif"
+                                    Style="{StaticResource InAppNotificationStyle}"
+                                    Grid.Row="4">
+                                    <controls:InAppNotification.Content>
+                                            <StackPanel VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch"
+                                            Orientation="Horizontal">
+
+                                            <FontIcon x:Name="verifyIconToastNotif"
+                                              Style="{StaticResource CaptionFontIconStyle}"
+                                              HorizontalAlignment="Left"
+                                              Foreground="IndianRed"/>
+
+                                            <TextBlock x:Name="verifyTextToastNotif"
+                                           Style="{StaticResource CaptionTextBlockStyle}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Margin="8 0 0 0"
+                                           Foreground="IndianRed"/>
+                                            </StackPanel>
+                                    </controls:InAppNotification.Content>
+                                </controls:InAppNotification>
+
+                            </Grid>
+                        </PivotItem>
+
+                        <!--Contains on success message of registeration process-->
+                        <PivotItem x:Name="pivotSuccessReg">
+                            <Grid  HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Title image of verify panel-->
+                                <Image Source="{StaticResource ProtectImage}"
+                                       Width="100"
+                                       Height="100"
+                                       Grid.Row="0"
+                                       HorizontalAlignment="Center"/>
+
+                                <!--The message from this panel-->
+                                <TextBlock Text="You verified your account successfully"
+                                           Style="{StaticResource TitleTextBlockStyle}"
+                                           Grid.Row="1"
+                                                       Margin="0 40 0 0"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                                <!--Continue to portal of the application-->
+                                <Button x:Name="btnRegSuccess"
+                                        Grid.Row="2"
+                                        Style="{StaticResource ButtonRoundedStyle}"
+                                        VerticalAlignment="Bottom"
+                                        HorizontalAlignment="Center"
+                                        FontSize="20"
+                                        extensions:Mouse.Cursor="Hand"
+                                        Click="BtnRegSuccess_Click">
+                                    <Button.Content>
+                                        <FontIcon Glyph="{StaticResource ContinueIcon}"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                    </Button.Content>
+                                </Button>
+
+                                <!--name of app and version-->
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 12"
+                                           Grid.Row="3"
+                                           Style="{StaticResource CaptionAltTextBlockStyle}"
+                                           Text="MovieTube 1.0.0v"
+                                           FontFamily="ms-appx:///Assets/Fonts/ProjectTitleFont/giddyupstd.otf#giddyup std"/>
+                            </Grid>
+                        </PivotItem>
+                    </Pivot>
+                </Grid>
+
+            </controls:DropShadowPanel>
+
+        </Grid>
+    </Grid>
+</Page>
