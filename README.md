@@ -1,6 +1,65 @@
 # MovieTube
-This app is created for showing list of categories that have list of movies that streamed from the server (Node js backend) to this UWP client app and you can rating, like/dislike, make comment and seeing the movie details (story author - director - actors ...)  like YouTube app 😅   
-Also it has the 3 security fundmentals:
-1. Encryption/Decryption data that sended/received between server and client using AES-128-cbc alghorithm
-2. Verify the requests that are from signed account not from any user and I achieved this using JWT tech
-3. to verify the token is sended from the right server, I decode token to have "sercret keyword" and check this sercret keyword if it's equal to the stored secret keyword in my UWP application or not
+<p align="center">
+  <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/MovieTubeIcon.png"> 
+</p>
+
+![Twitter Follow](https://img.shields.io/twitter/follow/AbdAlbiek?style=social) ![GitHub](https://img.shields.io/github/license/AbdAlghaniAlbiek/SQLiteDBProject)
+
+
+#Table of content
+* [General Info](#general-information)
+* [Tecnologies Used](technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Project Status](#project-status)
+
+## General Information
+* This UWP application is created to show how to stream a video content from the server to client like `YouTube` does today.
+* The user can make an account then he can choose from the categories list the movies-type category that he like and inside this category there is list of movies and when user clicks on a movie the app navigates to the movie details and in this page can user rating, like/dislike, make comment and seeing the movie details (story author - director - actors ...) and play the actual movie or watch the trailer. 
+
+## Technologies Used
+* Serialize/Deserialize data.
+* Consuming Restfull APIs from the server. 
+* High Security level.
+* Animations.
+* Streaming videos.
+
+## Features
+* This app can serialize/deserialize the sended/received data from server using using `Newtonsoft.Json`.
+* Connecting to the server using `Refit` and fetch json data from it using Restfull APIs.
+* It achieves the high Security level by Implementation this principles:
+1. Encryption/Decryption data that sended/received between server and client using `AES-128-cbc` alghorithm.
+2. Verify the requests that are from signed account not from any user and I achieved this using `JWT` tech.
+3. To verify the token is sended from the right server, I decode token to have `sercret keyword` and check this sercret keyword if it's equal to the `stored secret keyword` in my UWP application or not.
+* Using some of animations like scaling anim and ReorderAnimation for GridViews
+* Streaming movies and trailers from the server is simple with using built-in control in UWP, it's called `MediaPlayerElement`.
+* the user can interact with the movies like (like, dislike, comment, favourite or rating it).
+
+## Screenshots
+> To see all screen shots you can go [there.](https://github.com/AbdAlghaniAlbiek/MovieTube/tree/master/MovieTube/Assets/Screenshots)
+<p align="center">
+  <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/Screenshots/SignUp.jpg"> 
+</p>
+<p align="center">
+  <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/Screenshots/Movie_Details1.jpg"> 
+</p>
+<p align="center">
+  <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/Screenshots/Play_Movie.jpg"> 
+</p>
+
+## Setup
+* Visual Studio 2019 at least.
+* Windows 10 OS, Version: 1809 update, Build:(10.0, 17763).
+* Windows 10, version 1809 SDK.
+### Dependencies
+There few dependencies you should to install them:
+* MovieTube.Functions
+Refit
+* MovieTube.UI
+1. Microsoft.Toolkit.UWP.Controls.
+2. Microsoft.Toolkit.UWP.Animation.
+3. Microsoft.Toolkit.UWP.Connectivity.
+
+## Project status
+This project `no longer being worked on` but the contributions are still welcome.
