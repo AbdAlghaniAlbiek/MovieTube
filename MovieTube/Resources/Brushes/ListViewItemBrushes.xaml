@@ -1,9 +1,7 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <!--ListView item background and border color in Light theme-->
+    <!--  ListView item background and border color in Light theme  -->
     <Color x:Key="ListViewItemBackgroundColorPrimaryLight">#FFFFFF</Color>
     <Color x:Key="ListViewItemBackgroundColorPointerHoverLight">#FCFCFC</Color>
     <Color x:Key="ListViewItemBackgroundColorPointerPressedLight">#F5F5F5</Color>
@@ -12,7 +10,7 @@
     <Color x:Key="ListViewItemBorderColorPrimaryAfterPressingLight">#9676B8</Color>
 
 
-    <!--ListView item background and border color in Dark theme-->
+    <!--  ListView item background and border color in Dark theme  -->
     <Color x:Key="ListViewItemBackgroundColorPrimaryDark">#333333</Color>
     <Color x:Key="ListViewItemBackgroundColorPointerHoverDark">#4D4D4D</Color>
     <Color x:Key="ListViewItemBackgroundColorPointerPressedDark">#676767</Color>
@@ -25,21 +23,21 @@
     <ResourceDictionary.ThemeDictionaries>
 
         <ResourceDictionary x:Key="Light">
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource ListViewItemBackgroundColorPrimaryLight}"/>
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource ListViewItemBackgroundColorPointerHoverLight}"/>
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource ListViewItemBackgroundColorPointerPressedLight}"/>
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource ListViewItemBackgroundColorPrimaryLight}" />
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource ListViewItemBackgroundColorPointerHoverLight}" />
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource ListViewItemBackgroundColorPointerPressedLight}" />
 
-            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimary" Color="{StaticResource ListViewItemBorderColorPrimaryLight}"/>
-            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource ListViewItemBorderColorPrimaryAfterPressingLight}"/>
+            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimary" Color="{StaticResource ListViewItemBorderColorPrimaryLight}" />
+            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource ListViewItemBorderColorPrimaryAfterPressingLight}" />
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Dark">
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource ListViewItemBackgroundColorPrimaryDark}"/>
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource ListViewItemBackgroundColorPointerHoverDark}"/>
-            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource ListViewItemBackgroundColorPointerPressedDark}"/>
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource ListViewItemBackgroundColorPrimaryDark}" />
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource ListViewItemBackgroundColorPointerHoverDark}" />
+            <SolidColorBrush x:Key="ListViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource ListViewItemBackgroundColorPointerPressedDark}" />
 
-            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimary" Color="{StaticResource ListViewItemBorderColorPrimaryDark}"/>
-            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource ListViewItemBorderColorPrimaryAfterPressingDark}"/>
+            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimary" Color="{StaticResource ListViewItemBorderColorPrimaryDark}" />
+            <SolidColorBrush x:Key="ListViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource ListViewItemBorderColorPrimaryAfterPressingDark}" />
         </ResourceDictionary>
 
     </ResourceDictionary.ThemeDictionaries>

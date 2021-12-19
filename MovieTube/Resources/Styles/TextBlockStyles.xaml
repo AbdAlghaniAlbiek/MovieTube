@@ -1,108 +1,126 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <!--Using Roboto font as a default font for this application in english state -->
-    <!--Using Tajawal font as a main font for this application in arabic state -->
-    <!--Font family implemented as property in textblocks objects in strings folder-->
+    <!--  Using Roboto font as a default font for this application in english state  -->
+    <!--  Using Tajawal font as a main font for this application in arabic state  -->
+    <!--  Font family implemented as property in textblocks objects in strings folder  -->
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Resources/Brushes/TextBlockBrushes.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Resources/Brushes/TextBlockBrushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 
 
     <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{ThemeResource TextBlockForegroundSolidColorBrush}"/>
-        <Setter Property="FontFamily" Value="ms-appx:///Assets/Fonts/EnglishFonts/Roboto-Regular.ttf#Roboto"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="FontSize" Value="15"/>
-        <Setter Property="TextTrimming" Value="None"/>
-        <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
-        <Setter Property="TextLineBounds" Value="Full"/>
+        <Setter Property="Foreground" Value="{ThemeResource TextBlockForegroundSolidColorBrush}" />
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Fonts/EnglishFonts/Roboto-Regular.ttf#Roboto" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextTrimming" Value="None" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="LineStackingStrategy" Value="MaxHeight" />
+        <Setter Property="TextLineBounds" Value="Full" />
     </Style>
 
-    <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="46"/>
-        <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+    <Style
+        x:Key="HeaderTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="46" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
-    <Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="34"/>
-        <Setter Property="FontWeight" Value="Light"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+    <Style
+        x:Key="SubheaderTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
-    <Style x:Key="TitleTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="24"/>
-        <Setter Property="FontWeight" Value="SemiLight"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+    <Style
+        x:Key="TitleTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="SemiLight" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
-    <Style x:Key="SubtitleTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontWeight" Value="Normal"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+    <Style
+        x:Key="SubtitleTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
-    <Style x:Key="SubtitleAltTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="18"/>
-        <Setter Property="FontWeight" Value="Normal"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+    <Style
+        x:Key="SubtitleAltTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
 
-    <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="15"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style
+        x:Key="BodyTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
-    <Style x:Key="BaseAltTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="15"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+    <Style
+        x:Key="BaseAltTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
-    <Style x:Key="CaptionAltTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="13"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style
+        x:Key="CaptionAltTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
-    <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock"
-           BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="FontSize" Value="12"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style
+        x:Key="CaptionTextBlockStyle"
+        BasedOn="{StaticResource BaseTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
 
 
     <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
-        <Setter Property="Foreground" Value="{ThemeResource TextBlockForegroundSolidColorBrush}"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="FontSize" Value="15"/>
-        <Setter Property="TextTrimming" Value="None"/>
-        <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
-        <Setter Property="TextLineBounds" Value="Full"/>
-        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+        <Setter Property="Foreground" Value="{ThemeResource TextBlockForegroundSolidColorBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextTrimming" Value="None" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="LineStackingStrategy" Value="MaxHeight" />
+        <Setter Property="TextLineBounds" Value="Full" />
+        <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </Style>
 
 
-    <Style x:Key="BodyRichTextBlockStyle" TargetType="RichTextBlock"
-           BasedOn="{StaticResource BaseRichTextBlockStyle}">
-        <Setter Property="FontFamily" Value="ms-appx:///Assets/Fonts/EnglishFonts/"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style
+        x:Key="BodyRichTextBlockStyle"
+        BasedOn="{StaticResource BaseRichTextBlockStyle}"
+        TargetType="RichTextBlock">
+        <Setter Property="FontFamily" Value="ms-appx:///Assets/Fonts/EnglishFonts/" />
+        <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
 </ResourceDictionary>

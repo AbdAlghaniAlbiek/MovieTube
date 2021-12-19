@@ -1,36 +1,39 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls">
 
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Resources/Brushes/LoadingBrushes.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Resources/Brushes/LoadingBrushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <x:String x:Key="NetworkIssueIcon">&#xEB5E;</x:String>
 
     <Style x:Key="LoadingDataStyle" TargetType="controls:Loading">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="BorderThickness" Value="0.5"/>
-        <Setter Property="Background" Value="{ThemeResource LoadingBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="BorderThickness" Value="0.5" />
+        <Setter Property="Background" Value="{ThemeResource LoadingBackground}" />
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <StackPanel Style="{StaticResource DetailsStackPanelStyle}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Horizontal"
-                                BorderBrush="{StaticResource LoadingDataBrush}">
-                        <ProgressRing IsActive="True"
-                                      Width="15"
-                                      Height="15"
-                                      Foreground="{StaticResource LoadingDataBrush}"/>
-                        <TextBlock Text="Loading"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   VerticalAlignment="Center"
-                                   Margin="12 0 0 0"/>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="{StaticResource LoadingDataBrush}"
+                        Orientation="Horizontal"
+                        Style="{StaticResource DetailsStackPanelStyle}">
+                        <ProgressRing
+                            Width="15"
+                            Height="15"
+                            Foreground="{StaticResource LoadingDataBrush}"
+                            IsActive="True" />
+                        <TextBlock
+                            Margin="12,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyTextBlockStyle}"
+                            Text="Loading" />
                     </StackPanel>
                 </DataTemplate>
             </Setter.Value>
@@ -38,25 +41,28 @@
     </Style>
 
     <Style x:Key="LoadingNetworkIssueStyle" TargetType="controls:Loading">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="BorderThickness" Value="0.5"/>
-        <Setter Property="Background" Value="{ThemeResource LoadingBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="BorderThickness" Value="0.5" />
+        <Setter Property="Background" Value="{ThemeResource LoadingBackground}" />
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <StackPanel Style="{StaticResource DetailsStackPanelStyle}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Horizontal"
-                                BorderBrush="{StaticResource LoadingNetworkErrorIssueBrush}">
-                        <FontIcon Style="{StaticResource SmallFontIconStyle}"
-                                  Glyph="{StaticResource NetworkIssueIcon}"
-                                  Foreground="{StaticResource LoadingNetworkErrorIssueBrush}"/>
-                        <TextBlock Text="You aren't connected to internet"
-                                   Style="{StaticResource BodyTextBlockStyle}"
-                                   VerticalAlignment="Center"
-                                   Margin="20 0 0 0"/>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderBrush="{StaticResource LoadingNetworkErrorIssueBrush}"
+                        Orientation="Horizontal"
+                        Style="{StaticResource DetailsStackPanelStyle}">
+                        <FontIcon
+                            Foreground="{StaticResource LoadingNetworkErrorIssueBrush}"
+                            Glyph="{StaticResource NetworkIssueIcon}"
+                            Style="{StaticResource SmallFontIconStyle}" />
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyTextBlockStyle}"
+                            Text="You aren't connected to internet" />
                     </StackPanel>
                 </DataTemplate>
             </Setter.Value>

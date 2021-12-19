@@ -1,57 +1,55 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///Resources/Brushes/ContainersBrushes.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Resources/Brushes/ContainersBrushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="MainStackPanelDetailsStyle" TargetType="StackPanel">
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="Background" Value="{x:Null}"/>
-        <Setter Property="Orientation" Value="Vertical"/>
-        <Setter Property="Padding" Value="24 8 24 8"/>
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Padding" Value="24,8,24,8" />
     </Style>
 
     <Style x:Key="MainGridStyle" TargetType="Grid">
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="Background" Value="{ThemeResource MainGridBackgroundSolidColorBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="{ThemeResource MainGridBackgroundSolidColorBrush}" />
     </Style>
 
     <Style x:Key="DetailsGridStyle" TargetType="Grid">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}"/>
-        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}"/>
-        <Setter Property="Padding" Value="16"/>
-        <Setter Property="Margin" Value="0 8"/>
-        <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Margin" Value="0,8" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="CornerRadius" Value="4" />
     </Style>
 
     <Style x:Key="DetailsStackPanelStyle" TargetType="StackPanel">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}"/>
-        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}"/>
-        <Setter Property="Padding" Value="16"/>
-        <Setter Property="Margin" Value="0 8"/>
-        <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Margin" Value="0,8" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="CornerRadius" Value="4" />
     </Style>
 
     <Style x:Key="DetailsRelativePanelStyle" TargetType="RelativePanel">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}"/>
-        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}"/>
-        <Setter Property="Padding" Value="16"/>
-        <Setter Property="Margin" Value="0 8"/>
-        <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{ThemeResource ContainerBackgroundSolidColorBrush}" />
+        <Setter Property="BorderBrush" Value="{ThemeResource ContainerBorderSolidColorBrush}" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Margin" Value="0,8" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="CornerRadius" Value="4" />
     </Style>
 
 

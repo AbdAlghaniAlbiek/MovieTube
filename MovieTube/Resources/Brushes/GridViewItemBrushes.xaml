@@ -1,9 +1,7 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <!--GridViewitem background and border color in Light theme-->
+    <!--  GridViewitem background and border color in Light theme  -->
     <Color x:Key="GridViewItemBackgroundColorPrimaryLight">#FFFFFF</Color>
     <Color x:Key="GridViewItemBackgroundColorPointerHoverLight">#FCFCFC</Color>
     <Color x:Key="GridViewItemBackgroundColorPointerPressedLight">#F5F5F5</Color>
@@ -14,7 +12,7 @@
 
 
 
-    <!--ListView item background and border color in Dark theme-->
+    <!--  ListView item background and border color in Dark theme  -->
     <Color x:Key="GridViewItemBackgroundColorPrimaryDark">#333333</Color>
     <Color x:Key="GridViewItemBackgroundColorPointerHoverDark">#4D4D4D</Color>
     <Color x:Key="GridViewItemBackgroundColorPointerPressedDark">#676767</Color>
@@ -27,21 +25,21 @@
     <ResourceDictionary.ThemeDictionaries>
 
         <ResourceDictionary x:Key="Light">
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource GridViewItemBackgroundColorPrimaryLight}"/>
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource GridViewItemBackgroundColorPointerHoverLight}"/>
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource GridViewItemBackgroundColorPointerPressedLight}"/>
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource GridViewItemBackgroundColorPrimaryLight}" />
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource GridViewItemBackgroundColorPointerHoverLight}" />
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource GridViewItemBackgroundColorPointerPressedLight}" />
 
-            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimary" Color="{StaticResource GridViewItemBorderColorPrimaryLight}"/>
-            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource GridViewItemBorderColorPrimaryAfterPressingLight}"/>
+            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimary" Color="{StaticResource GridViewItemBorderColorPrimaryLight}" />
+            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource GridViewItemBorderColorPrimaryAfterPressingLight}" />
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Dark">
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource GridViewItemBackgroundColorPrimaryDark}"/>
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource GridViewItemBackgroundColorPointerHoverDark}"/>
-            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource GridViewItemBackgroundColorPointerPressedDark}"/>
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPrimary" Color="{StaticResource GridViewItemBackgroundColorPrimaryDark}" />
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerHover" Color="{StaticResource GridViewItemBackgroundColorPointerHoverDark}" />
+            <SolidColorBrush x:Key="GridViewItemBackgroundSolidColorBrushPointerPressed" Color="{StaticResource GridViewItemBackgroundColorPointerPressedDark}" />
 
-            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimary" Color="{StaticResource GridViewItemBorderColorPrimaryDark}"/>
-            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource GridViewItemBorderColorPrimaryAfterPressingDark}"/>
+            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimary" Color="{StaticResource GridViewItemBorderColorPrimaryDark}" />
+            <SolidColorBrush x:Key="GridViewItemBorderSolidColorBrushPrimaryAfterPressing" Color="{StaticResource GridViewItemBorderColorPrimaryAfterPressingDark}" />
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
 

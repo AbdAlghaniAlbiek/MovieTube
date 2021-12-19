@@ -153,6 +153,51 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppIcons\LargeTile.scale-100.png" />
+    <Content Include="Assets\AppIcons\LargeTile.scale-125.png" />
+    <Content Include="Assets\AppIcons\LargeTile.scale-150.png" />
+    <Content Include="Assets\AppIcons\LargeTile.scale-200.png" />
+    <Content Include="Assets\AppIcons\LargeTile.scale-400.png" />
+    <Content Include="Assets\AppIcons\SmallTile.scale-100.png" />
+    <Content Include="Assets\AppIcons\SmallTile.scale-125.png" />
+    <Content Include="Assets\AppIcons\SmallTile.scale-150.png" />
+    <Content Include="Assets\AppIcons\SmallTile.scale-200.png" />
+    <Content Include="Assets\AppIcons\SmallTile.scale-400.png" />
+    <Content Include="Assets\AppIcons\SplashScreen.scale-100.png" />
+    <Content Include="Assets\AppIcons\SplashScreen.scale-125.png" />
+    <Content Include="Assets\AppIcons\SplashScreen.scale-150.png" />
+    <Content Include="Assets\AppIcons\SplashScreen.scale-200.png" />
+    <Content Include="Assets\AppIcons\SplashScreen.scale-400.png" />
+    <Content Include="Assets\AppIcons\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\AppIcons\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\AppIcons\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\AppIcons\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\AppIcons\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\AppIcons\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\AppIcons\StoreLogo.scale-100.png" />
+    <Content Include="Assets\AppIcons\StoreLogo.scale-125.png" />
+    <Content Include="Assets\AppIcons\StoreLogo.scale-150.png" />
+    <Content Include="Assets\AppIcons\StoreLogo.scale-200.png" />
+    <Content Include="Assets\AppIcons\StoreLogo.scale-400.png" />
+    <Content Include="Assets\AppIcons\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\AppIcons\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\AppIcons\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\AppIcons\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\AppIcons\Wide310x150Logo.scale-400.png" />
     <Content Include="Assets\Images\AppIcon\MovieTubeIcon.png" />
     <Content Include="Assets\Images\LoginViewImages\Lock_100px.png" />
     <Content Include="Assets\Images\LoginViewImages\MovieBackground.jpg" />
@@ -180,53 +225,8 @@
     <Content Include="Assets\Images\MovieDetailsViewImages\Video_Light_50px.png" />
     <Content Include="Assets\Images\PlaceHolderImages\PlaceHolderItemImage_48px.png" />
     <Content Include="Assets\Images\PlaceHolderImages\PlaceHolderProfileImage_180px.png" />
-    <Content Include="Assets\LargeTile.scale-100.png" />
-    <Content Include="Assets\LargeTile.scale-125.png" />
-    <Content Include="Assets\LargeTile.scale-150.png" />
-    <Content Include="Assets\LargeTile.scale-200.png" />
-    <Content Include="Assets\LargeTile.scale-400.png" />
-    <Content Include="Assets\SmallTile.scale-100.png" />
-    <Content Include="Assets\SmallTile.scale-125.png" />
-    <Content Include="Assets\SmallTile.scale-150.png" />
-    <Content Include="Assets\SmallTile.scale-200.png" />
-    <Content Include="Assets\SmallTile.scale-400.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-125.png" />
-    <Content Include="Assets\SplashScreen.scale-150.png" />
-    <Content Include="Assets\SplashScreen.scale-400.png" />
-    <Content Include="Assets\Square150x150Logo.scale-100.png" />
-    <Content Include="Assets\Square150x150Logo.scale-125.png" />
-    <Content Include="Assets\Square150x150Logo.scale-150.png" />
-    <Content Include="Assets\Square150x150Logo.scale-400.png" />
-    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
-    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
-    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
-    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
-    <Content Include="Assets\Square44x44Logo.scale-100.png" />
-    <Content Include="Assets\Square44x44Logo.scale-125.png" />
-    <Content Include="Assets\Square44x44Logo.scale-150.png" />
-    <Content Include="Assets\Square44x44Logo.scale-400.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-125.png" />
-    <Content Include="Assets\StoreLogo.scale-150.png" />
-    <Content Include="Assets\StoreLogo.scale-200.png" />
-    <Content Include="Assets\StoreLogo.scale-400.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\MovieTubeIcon.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -388,10 +388,7 @@
       <Version>6.1.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\ar-SY\" />
-    <Folder Include="Strings\en-US\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Fonts\ArabicFonts\Tajawal-Bold.ttf" />
   </ItemGroup>
@@ -412,6 +409,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Fonts\ProjectTitleFont\giddyupstd.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieTube.Functions\MovieTube.Functions.csproj">
+      <Project>{E641B8B0-4A75-4490-B936-D1E22CF6505A}</Project>
+      <Name>MovieTube.Functions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

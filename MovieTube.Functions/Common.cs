@@ -8,7 +8,7 @@ namespace MovieTube.Functions
         //We use this statment when we connect to another device (this device is a server)
         //private static readonly string BASE_URL = "http://192.168.43.117";
         private static readonly string BASE_URL = "http://" + GetIPAddress();
-        private static readonly string PORT = "4000";
+        private static readonly string PORT = "3000";
         public static readonly string URL = BASE_URL + ":" + PORT + "/api";
         public static readonly string BANNERS = BASE_URL + ":" + PORT + "/public/loading/images/banners/";
         public static readonly string ACTORS = BASE_URL + ":" + PORT + "/public/loading/images/actors/";

@@ -1,12 +1,38 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)">
 
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
             <ResourceDictionary.MergedDictionaries>
-                <ColorPaletteResources Accent="#FFE8B30D" AltHigh="#FF000000" AltLow="#FF000000" AltMedium="#FF000000" AltMediumHigh="#FF000000" AltMediumLow="#FF000000" BaseHigh="#FFFFFFFF" BaseLow="#FFE8B30D" BaseMedium="#FFF5D97D" BaseMediumHigh="#FFF8E399" BaseMediumLow="#FFEEC645" ChromeAltLow="#FFF8E399" ChromeBlackHigh="#FF000000" ChromeBlackLow="#FFF8E399" ChromeBlackMedium="#FF000000" ChromeBlackMediumLow="#FF000000" ChromeDisabledHigh="#FFE8B30D" ChromeDisabledLow="#FFF5D97D" ChromeGray="#FFF2D061" ChromeHigh="#FFF2D061" ChromeLow="#FF8B6103" ChromeMedium="#FFA27505" ChromeMediumLow="#FFD19E0A" ChromeWhite="#FFFFFFFF" ListLow="#FFA27505" ListMedium="#FFE8B30D" />
+                <ColorPaletteResources
+                    Accent="#FFE8B30D"
+                    AltHigh="#FF000000"
+                    AltLow="#FF000000"
+                    AltMedium="#FF000000"
+                    AltMediumHigh="#FF000000"
+                    AltMediumLow="#FF000000"
+                    BaseHigh="#FFFFFFFF"
+                    BaseLow="#FFE8B30D"
+                    BaseMedium="#FFF5D97D"
+                    BaseMediumHigh="#FFF8E399"
+                    BaseMediumLow="#FFEEC645"
+                    ChromeAltLow="#FFF8E399"
+                    ChromeBlackHigh="#FF000000"
+                    ChromeBlackLow="#FFF8E399"
+                    ChromeBlackMedium="#FF000000"
+                    ChromeBlackMediumLow="#FF000000"
+                    ChromeDisabledHigh="#FFE8B30D"
+                    ChromeDisabledLow="#FFF5D97D"
+                    ChromeGray="#FFF2D061"
+                    ChromeHigh="#FFF2D061"
+                    ChromeLow="#FF8B6103"
+                    ChromeMedium="#FFA27505"
+                    ChromeMediumLow="#FFD19E0A"
+                    ChromeWhite="#FFFFFFFF"
+                    ListLow="#FFA27505"
+                    ListMedium="#FFE8B30D" />
                 <ResourceDictionary>
                     <Color x:Key="SystemChromeAltMediumHighColor">#CC000000</Color>
                     <Color x:Key="SystemChromeAltHighColor">#FF000000</Color>
@@ -19,13 +45,43 @@
         </ResourceDictionary>
         <ResourceDictionary x:Key="Light">
             <ResourceDictionary.MergedDictionaries>
-                <ColorPaletteResources Accent="#FFE8B30D" AltHigh="#FFFFFFFF" AltLow="#FFFFFFFF" AltMedium="#FFFFFFFF" AltMediumHigh="#FFFFFFFF" AltMediumLow="#FFFFFFFF" BaseHigh="#FF000000" BaseLow="#FFE8B30D" BaseMedium="#FFA27505" BaseMediumHigh="#FF744C00" BaseMediumLow="#FF8B6103" ChromeAltLow="#FF744C00" ChromeBlackHigh="#FF000000" ChromeBlackLow="#FFE8B30D" ChromeBlackMedium="#FF744C00" ChromeBlackMediumLow="#FFA27505" ChromeDisabledHigh="#FFE8B30D" ChromeDisabledLow="#FFA27505" ChromeGray="#FF8B6103" ChromeHigh="#FFE8B30D" ChromeLow="#FFF8E399" ChromeMedium="#FFF5D97D" ChromeMediumLow="#FFF8E399" ChromeWhite="#FFFFFFFF" ListLow="#FFF5D97D" ListMedium="#FFE8B30D" />
+                <ColorPaletteResources
+                    Accent="#FFE8B30D"
+                    AltHigh="#FFFFFFFF"
+                    AltLow="#FFFFFFFF"
+                    AltMedium="#FFFFFFFF"
+                    AltMediumHigh="#FFFFFFFF"
+                    AltMediumLow="#FFFFFFFF"
+                    BaseHigh="#FF000000"
+                    BaseLow="#FFE8B30D"
+                    BaseMedium="#FFA27505"
+                    BaseMediumHigh="#FF744C00"
+                    BaseMediumLow="#FF8B6103"
+                    ChromeAltLow="#FF744C00"
+                    ChromeBlackHigh="#FF000000"
+                    ChromeBlackLow="#FFE8B30D"
+                    ChromeBlackMedium="#FF744C00"
+                    ChromeBlackMediumLow="#FFA27505"
+                    ChromeDisabledHigh="#FFE8B30D"
+                    ChromeDisabledLow="#FFA27505"
+                    ChromeGray="#FF8B6103"
+                    ChromeHigh="#FFE8B30D"
+                    ChromeLow="#FFF8E399"
+                    ChromeMedium="#FFF5D97D"
+                    ChromeMediumLow="#FFF8E399"
+                    ChromeWhite="#FFFFFFFF"
+                    ListLow="#FFF5D97D"
+                    ListMedium="#FFE8B30D" />
                 <ResourceDictionary>
                     <Color x:Key="SystemChromeAltMediumHighColor">#CCE8E8E8</Color>
                     <Color x:Key="SystemChromeAltHighColor">#FFE8E8E8</Color>
                     <Color x:Key="SystemRevealListLowColor">#FFF5D97D</Color>
                     <Color x:Key="SystemRevealListMediumColor">#FFE8B30D</Color>
-                    <RevealBackgroundBrush x:Key="SystemControlHighlightListLowRevealBackgroundBrush" TargetTheme="Light" Color="{ThemeResource SystemRevealListMediumColor}" FallbackColor="{ StaticResource SystemListMediumColor}" />
+                    <RevealBackgroundBrush
+                        x:Key="SystemControlHighlightListLowRevealBackgroundBrush"
+                        FallbackColor="{StaticResource SystemListMediumColor}"
+                        TargetTheme="Light"
+                        Color="{ThemeResource SystemRevealListMediumColor}" />
                     <Color x:Key="RegionColor">#FFE8E8E8</Color>
                     <SolidColorBrush x:Key="RegionBrush" Color="{StaticResource RegionColor}" />
                 </ResourceDictionary>

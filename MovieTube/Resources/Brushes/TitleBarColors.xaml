@@ -1,11 +1,9 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.ThemeDictionaries>
 
-        <!--Title bar background and forground colors in all states in light theme-->
-        <!--Title bar buttons background in general state and in inactive state must be transparent-->
+        <!--  Title bar background and forground colors in all states in light theme  -->
+        <!--  Title bar buttons background in general state and in inactive state must be transparent  -->
         <ResourceDictionary x:Key="Light">
             <Color x:Key="TitleBarButtonForegroundColor">#000000</Color>
 
@@ -17,8 +15,8 @@
         </ResourceDictionary>
 
 
-        <!--Title bar background and forground colors in all states in Dark theme-->
-        <!--Title bar buttons background in general state and in inactive state must be transparent-->
+        <!--  Title bar background and forground colors in all states in Dark theme  -->
+        <!--  Title bar buttons background in general state and in inactive state must be transparent  -->
         <ResourceDictionary x:Key="Dark">
             <Color x:Key="TitleBarButtonForegroundColor">#FFFFFF</Color>
 
