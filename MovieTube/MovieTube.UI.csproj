@@ -226,6 +226,16 @@
     <Content Include="Assets\Images\PlaceHolderImages\PlaceHolderItemImage_48px.png" />
     <Content Include="Assets\Images\PlaceHolderImages\PlaceHolderProfileImage_180px.png" />
     <Content Include="Assets\MovieTubeIcon.png" />
+    <Content Include="Assets\Screenshots\Categories.jpg" />
+    <Content Include="Assets\Screenshots\Loading_State.jpg" />
+    <Content Include="Assets\Screenshots\Movie_Details1.jpg" />
+    <Content Include="Assets\Screenshots\Movie_Details2.jpg" />
+    <Content Include="Assets\Screenshots\Play_Movie.jpg" />
+    <Content Include="Assets\Screenshots\Selected_Category.jpg" />
+    <Content Include="Assets\Screenshots\SignIn.jpg" />
+    <Content Include="Assets\Screenshots\SignUp.jpg" />
+    <Content Include="Assets\Screenshots\SignUp_Success.jpg" />
+    <Content Include="Assets\Screenshots\Verify.jpg" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>

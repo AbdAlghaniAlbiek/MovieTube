@@ -184,7 +184,7 @@
                                           Grid.Row="3"/>
                                 <PasswordBox x:Name="txtPasswordLogin"
                                              PlaceholderText="Password"
-                                             Password="asdfjkl;"
+                                             Password=""
                                              Grid.Row="3"
                                              Margin="32 0 0 0"
                                              HorizontalAlignment="Left"
