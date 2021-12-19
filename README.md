@@ -17,6 +17,7 @@
 ## General Information
 * This UWP application is created to show how to stream a video content from the server to client like `YouTube` does today.
 * The user can make an account then he can choose from the categories list the movies-type category that he like and inside this category there is list of movies and when user clicks on a movie the app navigates to the movie details and in this page can user rating, like/dislike, make comment and seeing the movie details (story author - director - actors ...) and play the actual movie or watch the trailer. 
+* The server is Node.js backend project that contains The Resfull APIs and movies/trailers videos. you can see it [here.](https://github.com/AbdAlghaniAlbiek/movietube_backend)
 
 ## Technologies Used
 * Serialize/Deserialize data.
