@@ -18,13 +18,13 @@
     <Page.Resources>
         <ResourceDictionary>
 
-            <converters:ImageURLConverter x:Key="ImageURLConverter"/>
+            <!--<converters:ImageURLConverter x:Key="ImageURLConverter"/>
             <converters:StringToDoubleConverter x:Key="StringToDoubleConverter"/>
             <converters:StringToIntegerConverter x:Key="StringToIntegerConverter"/>
             <converters:VideoURLConverter x:Key="VideoURLConverter"/>
             <converters:LikedConverter x:Key="LikedConverter"/>
             <converters:DislikedConverter x:Key="DislikedConverter"/>
-            <converters:FavouriteConverter x:Key="FavouriteConverter"/>
+            <converters:FavouriteConverter x:Key="FavouriteConverter"/>-->
 
 
             <ResourceDictionary.MergedDictionaries>
