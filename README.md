@@ -26,7 +26,7 @@
 * Streaming videos.
 
 ## Features
-* This app can serialize/deserialize the sended/received data from server using using `Newtonsoft.Json`.
+* This app can serialize/deserialize the sended/received data from server using `Newtonsoft.Json`.
 * Connecting to the server using `Refit` and fetch json data from it using Restfull APIs.
 * It achieves the high Security level by Implementation this principles:
 1. Encryption/Decryption data that sended/received between server and client using `AES-128-cbc` alghorithm.
@@ -37,7 +37,7 @@
 * the user can interact with the movies like (like, dislike, comment, favourite or rating it).
 
 ## Screenshots
-> To see all screen shots you can go [there.](https://github.com/AbdAlghaniAlbiek/MovieTube/tree/master/MovieTube/Assets/Screenshots)
+> To see all screenshots you can go [there.](https://github.com/AbdAlghaniAlbiek/MovieTube/tree/master/MovieTube/Assets/Screenshots)
 <p align="center">
   <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/Screenshots/SignUp.jpg"> 
 </p>
@@ -55,11 +55,11 @@
 ### Dependencies
 There few dependencies you should to install them:
 * MovieTube.Functions
-Refit
+1. Refit (5.1.54)
 * MovieTube.UI
-1. Microsoft.Toolkit.UWP.Controls.
-2. Microsoft.Toolkit.UWP.Animation.
-3. Microsoft.Toolkit.UWP.Connectivity.
+1. Microsoft.Toolkit.UWP.Controls (6.1.1).
+2. Microsoft.Toolkit.UWP.Animation (6.1.1).
+3. Microsoft.Toolkit.UWP.Connectivity (6.1.1).
 
 ## Project status
 This project `no longer being worked on` but the contributions are still welcome.
