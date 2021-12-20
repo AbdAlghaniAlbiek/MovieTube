@@ -12,6 +12,7 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Versions](#versions)
 * [Project Status](#project-status)
 
 ## General Information
@@ -61,6 +62,9 @@ There few dependencies you should to install them:
 1. Microsoft.Toolkit.UWP.Controls (6.1.1).
 2. Microsoft.Toolkit.UWP.Animation (6.1.1).
 3. Microsoft.Toolkit.UWP.Connectivity (6.1.1).
+
+## Versions
+**[version 1.0.0]:** Contains all the features that descriped above.
 
 ## Project status
 This project `no longer being worked on` but the contributions are still welcome.
