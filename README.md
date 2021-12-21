@@ -1,6 +1,6 @@
 # MovieTube
 <p align="center">
-  <img src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/MovieTubeIcon.png"> 
+  <img width="300" height="300" src="https://github.com/AbdAlghaniAlbiek/MovieTube/blob/master/MovieTube/Assets/MovieTubeIcon.png"> 
 </p>
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/AbdAlbiek?style=social) ![GitHub](https://img.shields.io/github/license/AbdAlghaniAlbiek/SQLiteDBProject)
